@@ -1,7 +1,10 @@
 name:                dozens
 version:             0.1.0
-synopsis:            dozens(https://dozens.jp/) api library
-description:         dozens(https://dozens.jp/) api library
+synopsis:            dozens api library
+description:         
+  dozens(<https://dozens.jp/>) api library
+  .
+  examples: <https://github.com/philopon/dozens-hs/blob/master/examples/>
 license:             MIT
 license-file:        LICENSE
 author:              HirotomoMoriwaki<philopon.dependence@gmail.com>

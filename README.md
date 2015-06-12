@@ -1,5 +1,8 @@
 dozens-hs
 ==
+[![Build Status](https://travis-ci.org/philopon/dozens-hs.svg?branch=master)](https://travis-ci.org/philopon/dozens-hs)
+[![Hackage](http://img.shields.io/hackage/v/dozens.svg)](https://hackage.haskell.org/package/dozens)
+[![MIT license](http://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 dozens(https://dozens.jp/) api library for haskell
 

@@ -60,5 +60,3 @@ updateRecord = I.UpdateRecord (I.RecordId 0) Nothing Nothing Nothing
 
 deleteRecord :: I.DeleteRecord
 deleteRecord = I.DeleteRecord (I.RecordId 0)
-
-

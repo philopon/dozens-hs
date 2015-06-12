@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 {-# LANGUAGE Rank2Types #-}
 {-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE FlexibleInstances #-}
@@ -12,7 +13,11 @@ module Network.API.Dozens
     , module Network.API.Dozens.Common
     ) where
 
+
 import Control.Monad.IO.Class
+#if !MIN_VERSION_base(4,8,0)
+import Control.Applicative((<$>), (<*>), pure)
+#endif
 
 import Network.HTTP.Client
 import qualified Network.API.Dozens.Internal as I

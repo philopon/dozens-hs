@@ -1,7 +1,9 @@
+{-# LANGUAGE CPP #-}
 {-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE ViewPatterns #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE NoMonomorphismRestriction #-}
 
 module Network.API.Dozens.Internal
@@ -57,6 +59,9 @@ module Network.API.Dozens.Internal
     ) where
 
 import Control.Monad(join)
+#if !MIN_VERSION_base(4,8,0)
+import Control.Applicative((<$>), (<*>), pure)
+#endif
 import Control.Exception(Exception, throwIO, catch)
 import Control.Concurrent(MVar, newMVar, withMVar, modifyMVar_)
 
@@ -180,7 +185,7 @@ instance FromJSON Zone' where
         <*> (T.encodeUtf8 <$> o .: "name")
     parseJSON _ = fail "Zone: not object"
 
-newtype Domain = Domain { unDomain :: [Zone] } deriving Show
+newtype Domain = Domain { unDomain :: [Zone] }
 
 instance FromJSON Domain where
     parseJSON (Object o) = Domain . map unZone' <$> o .: "domain"

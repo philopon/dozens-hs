@@ -3,7 +3,7 @@ dozens-hs
 
 dozens(https://dozens.jp/) api library for haskell
 
-```example.hs
+```.hs
 {-# LANGUAGE OverloadedStrings #-}
 import Network.HTTP.Client
 import Network.HTTP.Client.TLS
